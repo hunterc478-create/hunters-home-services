@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Hunter's Home Services</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Snow removal for driveways and sidewalks in Coralville, North Liberty and Iowa City. 50% off your first visit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: a navy winter band up top that matches the printed flyers, then a plain white page with prices, how it works, and a big phone number. */
+:root{
+  --navy:#0B2545;
+  --ink:#0B2545;
+  --muted:#3D5A80;
+  --gold:#FFB627;
+  --on-gold:#0B2545;
+  --bg:#FFFFFF;
+  --soft:#F1F5FA;
+  --line:#DCE4EE;
+  --band:#0B2545;
+  --on-band:#FFFFFF;
+  --on-band-muted:#C9D7E8;
+  --display:'Archivo Black', Impact, 'Arial Black', sans-serif;
+  --body:'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --ink:#EAF0F7;--muted:#A9BBD1;--bg:#0A1628;--soft:#11223A;--line:#1E3352;
+  --band:#06101F;--on-band:#FFFFFF;--on-band-muted:#B5C6DB;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --ink:#EAF0F7;--muted:#A9BBD1;--bg:#0A1628;--soft:#11223A;--line:#1E3352;
+  --band:#06101F;--on-band:#FFFFFF;--on-band-muted:#B5C6DB;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+.wrap{max-width:960px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+h1,h2{font-family:var(--display);font-weight:400;line-height:1;text-wrap:balance;margin:0}
+h2{font-size:clamp(28px,5vw,40px)}
+p{margin:0}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+
+/* Hero band */
+.band{background:var(--band);color:var(--on-band);position:relative;overflow:hidden}
+.band .wrap{padding-block:56px 48px;position:relative;display:flex;flex-direction:column;gap:18px}
+.flake{position:absolute;right:-60px;top:-30px;width:360px;height:360px;opacity:.12;pointer-events:none}
+.band h1{font-size:clamp(52px,12vw,104px);letter-spacing:-.01em}
+.band h1 span{color:var(--gold)}
+.band .lede{font-size:clamp(18px,2.6vw,22px);color:var(--on-band-muted);max-width:34ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 22px;border-radius:10px;font:800 17px var(--body);text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn-gold{background:var(--gold);color:var(--on-gold)}
+.btn-ghost{background:transparent;color:var(--on-band);border-color:rgba(255,255,255,.4)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn svg{width:20px;height:20px}
+
+.offer{background:var(--gold);color:var(--on-gold)}
+.offer .wrap{padding-block:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px;align-items:center}
+.offer strong{font-size:20px;font-weight:800}
+.offer span{font-size:15px;font-weight:700}
+
+section .wrap{padding-block:56px;display:flex;flex-direction:column;gap:28px}
+section + section .wrap{border-top:1px solid var(--line)}
+
+/* Prices */
+.prices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
+.row{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:2px solid var(--line);font-size:19px}
+.row b{font-weight:800;font-variant-numeric:tabular-nums}
+.note{color:var(--muted);font-size:15px}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{background:var(--soft);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:8px;counter-increment:s;min-width:0}
+.steps li::before{content:counter(s);font-family:var(--display);font-size:30px;color:var(--muted);line-height:1}
+.steps h3{margin:0;font-size:19px;font-weight:800}
+.steps p{color:var(--muted);font-size:16px}
+
+/* Contact */
+.contact{background:var(--soft);border-radius:18px;padding:32px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+.phone{font-family:var(--display);font-size:clamp(34px,7vw,52px);line-height:1;user-select:all;font-variant-numeric:tabular-nums}
+.contact .btns{display:flex;flex-wrap:wrap;gap:10px}
+.contact .btn-gold{border-color:var(--gold)}
+.btn-line{background:transparent;color:var(--ink);border-color:var(--line)}
+#copied{font-size:14px;color:var(--muted);min-height:1.2em}
+
+.area{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
+.area li{border:2px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:700}
+.extra{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;color:var(--muted)}
+.tag{background:var(--navy);color:#fff;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:6px}
+:root[data-theme="dark"] .tag{background:var(--line)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tag{background:var(--line)}}
+
+footer .wrap{padding-block:28px 40px;color:var(--muted);font-size:14px}
+
+.mobile-bar{display:none}
+@media (max-width:700px){
+  body{font-size:16px;padding-bottom:calc(84px + env(safe-area-inset-bottom, 0px))}
+  .band .wrap{padding-block:36px 32px;gap:14px}
+  .flake{width:220px;height:220px;right:-60px;top:-20px}
+  .cta-row .btn{flex:1 1 100%}
+  .offer .wrap{flex-direction:column;align-items:flex-start;gap:2px}
+  .offer strong{font-size:18px}
+  .offer span{font-size:14px}
+  section .wrap{padding-block:36px;gap:20px}
+  .prices{grid-template-columns:1fr}
+  .row{font-size:17px;padding:13px 0}
+  .steps{grid-template-columns:1fr;gap:12px}
+  .steps li{display:grid;grid-template-columns:auto 1fr;column-gap:16px;row-gap:2px;padding:16px 18px}
+  .steps li::before{grid-row:span 2;font-size:26px}
+  .contact{padding:22px;flex-direction:column;align-items:stretch;text-align:center}
+  .contact .btns .btn{flex:1 1 0}
+  .area li{padding:6px 14px;font-size:15px}
+  .mobile-bar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--bg);border-top:1px solid var(--line);
+    padding-top:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom, 0px));
+    padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+  .mobile-bar .btn{flex:1 1 0;min-height:54px}
+}
+@media (prefers-reduced-motion: no-preference){
+  .flake{animation:spin 90s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+}
+</style>
+</head>
+<body>
+
+
+<header class="band">
+  <svg class="flake" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1L19.1 4.9M9 4l3 3 3-3M9 20l3-3 3 3M4 9l3 3-3 3M20 9l-3 3 3 3"/></svg>
+  <div class="wrap">
+    <div class="eyebrow">Hunter's Home Services</div>
+    <h1>SNOW<br><span>REMOVAL</span></h1>
+    <p class="lede">Driveway and sidewalk snow clearing from a local neighbor in Coralville, North Liberty and Iowa City.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="sms:+15153260652">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Text 515-326-0652
+      </a>
+      <a class="btn btn-ghost" href="#prices">See prices</a>
+    </div>
+  </div>
+</header>
+
+<div class="offer">
+  <div class="wrap">
+    <strong>50% OFF YOUR FIRST VISIT</strong>
+    <span>Local college student starting my own small business. Thanks for the support!</span>
+  </div>
+</div>
+
+<main>
+  <section id="prices">
+    <div class="wrap">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div class="eyebrow" style="color:var(--muted)">Starting prices</div>
+        <h2>Simple, per-visit pricing</h2>
+      </div>
+      <div class="prices">
+        <div class="row"><span>Single-car driveway</span><b>$40</b></div>
+        <div class="row"><span>Two-car driveway</span><b>$55</b></div>
+        <div class="row"><span>Front sidewalk</span><b>+$15</b></div>
+        <div class="row"><span>Salting</span><b>+$20</b></div>
+      </div>
+      <p class="note">Big driveways or storms over 6": free quote. Text a photo of your driveway and I'll send you a price. No obligation.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><h3>Text me</h3><p>Send your address and a photo of your driveway.</p></li>
+        <li><h3>Get a price</h3><p>I'll reply with a quote before any work is done.</p></li>
+        <li><h3>Pay after</h3><p>Cash, Venmo or Zelle once the job is finished.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Call or text</h2>
+      <div class="contact">
+        <div class="phone" id="phone">515-326-0652</div>
+        <div class="btns">
+          <a class="btn btn-gold" href="sms:+15153260652">Text</a>
+          <a class="btn btn-line" href="tel:+15153260652">Call</a>
+          <button class="btn btn-line" id="copy" type="button">Copy number</button>
+        </div>
+      </div>
+      <p id="copied" role="status"></p>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="eyebrow" style="color:var(--muted)">Service area</div>
+        <ul class="area"><li>Coralville</li><li>North Liberty</li><li>Iowa City</li></ul>
+      </div>
+      <div class="extra"><span class="tag">Also ask about</span><span><strong style="color:var(--ink)">Driveway pressure washing</strong> and other seasonal services</span></div>
+    </div>
+  </section>
+</main>
+
+<nav class="mobile-bar" aria-label="Contact Hunter">
+  <a class="btn btn-gold" href="sms:+15153260652">Text 515-326-0652</a>
+  <a class="btn btn-line" href="tel:+15153260652">Call</a>
+</nav>
+
+<footer><div class="wrap">Hunter's Home Services · Coralville, Iowa</div></footer>
+
+<script>
+document.getElementById('copy').addEventListener('click', function(){
+  var out = document.getElementById('copied');
+  var num = '515-326-0652';
+  try {
+    navigator.clipboard.writeText(num).then(function(){ out.textContent = 'Number copied.'; }, fallback);
+  } catch (e) { fallback(); }
+  function fallback(){
+    var r = document.createRange(); r.selectNodeContents(document.getElementById('phone'));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    out.textContent = 'Number selected. Copy it from here.';
+  }
+});
+</script>
+
+</body>
+</html>
