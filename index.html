@@ -67,6 +67,7 @@ section + section .wrap{border-top:1px solid var(--line)}
 /* Prices */
 .prices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
 .row{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:2px solid var(--line);font-size:19px}
+.row span small{display:block;font-size:14px;color:var(--muted);margin-top:2px}
 .row b{font-weight:800;font-variant-numeric:tabular-nums}
 .note{color:var(--muted);font-size:15px}
 
@@ -157,12 +158,12 @@ footer .wrap{padding-block:28px 40px;color:var(--muted);font-size:14px}
         <h2>Simple, per-visit pricing</h2>
       </div>
       <div class="prices">
-        <div class="row"><span>Single-car driveway</span><b>$40</b></div>
-        <div class="row"><span>Two-car driveway</span><b>$55</b></div>
+        <div class="row"><span>Single-car driveway<small>1 car wide, up to about 2 cars long</small></span><b>$40</b></div>
+        <div class="row"><span>Two-car driveway<small>2 cars wide, up to about 2 cars long</small></span><b>$55</b></div>
         <div class="row"><span>Front sidewalk</span><b>+$15</b></div>
         <div class="row"><span>Salting</span><b>+$20</b></div>
       </div>
-      <p class="note">Big driveways or storms over 6": free quote. Text a photo of your driveway and I'll send you a price. No obligation.</p>
+      <p class="note">Longer, wider or sloped driveways and storms over 6": free quote. Text a photo of your driveway and I'll send you a price. No obligation.</p>
     </div>
   </section>
 
