@@ -24,15 +24,17 @@
   --band:#0B2545;
   --on-band:#FFFFFF;
   --on-band-muted:#C9D7E8;
+  --sky:#2E6FA7;
+  --sky-bg:#E6F0F9;
   --display:'Archivo Black', Impact, 'Arial Black', sans-serif;
   --body:'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --ink:#EAF0F7;--muted:#A9BBD1;--bg:#0A1628;--soft:#11223A;--line:#1E3352;
-  --band:#06101F;--on-band:#FFFFFF;--on-band-muted:#B5C6DB;color-scheme:dark}}
+  --band:#06101F;--on-band:#FFFFFF;--on-band-muted:#B5C6DB;--sky:#8EC3EE;--sky-bg:#0E2238;color-scheme:dark}}
 :root[data-theme="dark"]{
   --ink:#EAF0F7;--muted:#A9BBD1;--bg:#0A1628;--soft:#11223A;--line:#1E3352;
-  --band:#06101F;--on-band:#FFFFFF;--on-band-muted:#B5C6DB;color-scheme:dark}
+  --band:#06101F;--on-band:#FFFFFF;--on-band-muted:#B5C6DB;--sky:#8EC3EE;--sky-bg:#0E2238;color-scheme:dark}
 
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
@@ -65,12 +67,14 @@ section .wrap{padding-block:56px;display:flex;flex-direction:column;gap:28px}
 section + section .wrap{border-top:1px solid var(--line)}
 
 /* Services */
+#services{background:var(--sky-bg)}
+#services .eyebrow{color:var(--sky)!important}
 .svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;list-style:none;margin:0;padding:0}
-.svc li{background:var(--soft);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.svc li{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
 .svc .head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
 .svc h3{margin:0;font-size:20px;font-weight:800}
 .svc p{color:var(--muted);font-size:16px}
-.chip{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:2px solid var(--line);color:var(--muted);white-space:nowrap}
+.chip{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:2px solid var(--line);color:var(--sky);border-color:var(--sky);white-space:nowrap}
 .svc li:last-child:nth-child(odd){grid-column:1/-1}
 .chip.now{background:var(--gold);border-color:var(--gold);color:var(--on-gold)}
 
