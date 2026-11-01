@@ -6,7 +6,7 @@
 <style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Hunter's Home Services</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Snow removal for driveways and sidewalks in Coralville, North Liberty, Iowa City and the Des Moines area by request. 50% off your first visit.">
+<meta name="description" content="Hunter's Home Services: snow removal, Christmas light installs, pressure washing and junk removal in Coralville, North Liberty, Iowa City and the Des Moines area by request.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;700;800&display=swap">
@@ -64,6 +64,15 @@ p{margin:0}
 section .wrap{padding-block:56px;display:flex;flex-direction:column;gap:28px}
 section + section .wrap{border-top:1px solid var(--line)}
 
+/* Services */
+.svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;list-style:none;margin:0;padding:0}
+.svc li{background:var(--soft);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.svc .head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.svc h3{margin:0;font-size:20px;font-weight:800}
+.svc p{color:var(--muted);font-size:16px}
+.chip{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:2px solid var(--line);color:var(--muted);white-space:nowrap}
+.chip.now{background:var(--gold);border-color:var(--gold);color:var(--on-gold)}
+
 /* Prices */
 .prices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
 .row{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:2px solid var(--line);font-size:19px}
@@ -106,6 +115,7 @@ footer .wrap{padding-block:28px 40px;color:var(--muted);font-size:14px}
   .offer span{font-size:14px}
   section .wrap{padding-block:36px;gap:20px}
   .prices{grid-template-columns:1fr}
+  .svc{grid-template-columns:1fr;gap:12px}
   .row{font-size:17px;padding:13px 0}
   .steps{grid-template-columns:1fr;gap:12px}
   .steps li{display:grid;grid-template-columns:auto 1fr;column-gap:16px;row-gap:2px;padding:16px 18px}
@@ -138,7 +148,7 @@ footer .wrap{padding-block:28px 40px;color:var(--muted);font-size:14px}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         Text 515-326-0652
       </a>
-      <a class="btn btn-ghost" href="#prices">See prices</a>
+      <a class="btn btn-ghost" href="#services">All services</a>
     </div>
   </div>
 </header>
@@ -151,11 +161,27 @@ footer .wrap{padding-block:28px 40px;color:var(--muted);font-size:14px}
 </div>
 
 <main>
+  <section id="services">
+    <div class="wrap">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div class="eyebrow" style="color:var(--muted)">Year-round help for your home</div>
+        <h2>Services</h2>
+      </div>
+      <ul class="svc">
+        <li><div class="head"><h3>Snow removal &amp; salting</h3><span class="chip now">Available now</span></div><p>Driveways and sidewalks cleared after the snow, plus salting so they don't refreeze.</p></li>
+        <li><div class="head"><h3>Christmas light installs</h3><span class="chip">Ask about it</span></div><p>I hang your lights on the house and come back to take them down in January.</p></li>
+        <li><div class="head"><h3>Driveway pressure washing</h3><span class="chip">Spring 2027</span></div><p>Driveways, sidewalks and patios cleaned up after a long winter.</p></li>
+        <li><div class="head"><h3>Junk removal &amp; move-outs</h3><span class="chip">May 2027</span></div><p>Old couches, mattresses and move-out cleanups hauled away.</p></li>
+      </ul>
+      <p class="note">Want a spring service? Text me now to get on the list and I'll reach out when booking opens.</p>
+    </div>
+  </section>
+
   <section id="prices">
     <div class="wrap">
       <div style="display:flex;flex-direction:column;gap:10px">
-        <div class="eyebrow" style="color:var(--muted)">Starting prices</div>
-        <h2>Simple, per-visit pricing</h2>
+        <div class="eyebrow" style="color:var(--muted)">Starting prices, per visit</div>
+        <h2>Snow removal pricing</h2>
       </div>
       <div class="prices">
         <div class="row"><span>Single-car driveway<small>1 car wide, up to about 2 cars long</small></span><b>$40</b></div>
@@ -198,7 +224,6 @@ footer .wrap{padding-block:28px 40px;color:var(--muted);font-size:14px}
         <div class="eyebrow" style="color:var(--muted)">Service area</div>
         <ul class="area"><li>Coralville</li><li>North Liberty</li><li>Iowa City</li><li>Des Moines area (by request)</li></ul>
       </div>
-      <div class="extra"><span class="tag">Also ask about</span><span><strong style="color:var(--ink)">Driveway pressure washing</strong> and other seasonal services</span></div>
     </div>
   </section>
 </main>
