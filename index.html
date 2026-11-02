@@ -42,9 +42,13 @@ p{margin:0}
 .band{background:var(--band);color:var(--on-band);position:relative;overflow:hidden;border-top:8px solid var(--navy)}
 .band .wrap{padding-block:56px 48px;position:relative;display:flex;flex-direction:column;gap:18px}
 .flake{position:absolute;right:-60px;top:-30px;width:360px;height:360px;opacity:.15;pointer-events:none}
-.band h1{font-size:clamp(52px,12vw,104px);letter-spacing:-.01em}
+.band h1{font-size:clamp(40px,9.5vw,88px);letter-spacing:-.01em}
+.now-badge{display:inline-flex;flex-wrap:wrap;max-width:100%;align-items:center;gap:8px 12px;align-self:flex-start;background:var(--gold);color:var(--on-gold);border-radius:12px;padding:12px 18px}
+.now-badge svg{width:30px;height:30px;flex:none}
+.now-badge span{font-family:var(--display);font-size:clamp(24px,4.6vw,38px);line-height:1;text-transform:uppercase}
+.now-badge em{font-style:normal;font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--navy);color:#fff;border-radius:999px;padding:5px 10px;white-space:nowrap}
 .band h1 span{color:var(--sky)}
-.band .lede{font-size:clamp(18px,2.6vw,22px);color:var(--on-band-muted);max-width:34ch}
+.band .lede{font-size:clamp(17px,2.4vw,20px);color:var(--on-band-muted);max-width:44ch}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 22px;border-radius:10px;font:800 17px var(--body);text-decoration:none;border:2px solid transparent;cursor:pointer}
 .btn-gold{background:var(--gold);color:var(--on-gold)}
@@ -150,9 +154,10 @@ footer .wrap{padding-block:28px 40px;color:var(--muted);font-size:14px}
 <header class="band">
   <svg class="flake" viewBox="0 0 24 24" fill="none" stroke="#2E6FA7" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1L19.1 4.9M9 4l3 3 3-3M9 20l3-3 3 3M4 9l3 3-3 3M20 9l-3 3 3 3"/></svg>
   <div class="wrap">
-    <div class="eyebrow">Hunter's Home Services</div>
-    <h1>SNOW<br><span>REMOVAL</span></h1>
-    <p class="lede">Driveway and sidewalk snow clearing from a local neighbor in Coralville, North Liberty and Iowa City, plus the Des Moines area by request.</p>
+    <div class="eyebrow">Coralville · North Liberty · Iowa City · Des Moines area</div>
+    <h1>HUNTER'S<br><span>HOME SERVICES</span></h1>
+    <div class="now-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1L19.1 4.9"/></svg><span>Snow removal</span><em>Booking now</em></div>
+    <p class="lede">Driveway and sidewalk snow clearing, plus window cleaning, car detailing and more. Serving Coralville, North Liberty and Iowa City, and the Des Moines area by request.</p>
     <div class="cta-row">
       <a class="btn btn-gold" href="sms:+15153260652">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
