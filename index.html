@@ -86,6 +86,17 @@ section + section .wrap{border-top:1px solid var(--line)}
 .row span small{display:block;font-size:14px;color:var(--muted);margin-top:2px}
 .row b{font-weight:800;font-variant-numeric:tabular-nums}
 .note{color:var(--muted);font-size:15px}
+/* Pricing tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tabs button{font:800 16px var(--body);min-height:46px;padding:0 18px;border-radius:999px;border:2px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+:root[data-theme="dark"] .tabs button[aria-selected="true"]{background:var(--gold);border-color:var(--gold);color:var(--on-gold)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tabs button[aria-selected="true"]{background:var(--gold);border-color:var(--gold);color:var(--on-gold)}}
+.tabs button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.panel{display:flex;flex-direction:column;gap:20px}
+.panel[hidden]{display:none}
+.row b{text-align:right;white-space:nowrap}
+.row b small{display:block;font-size:13px;font-weight:700;color:var(--muted);margin-top:2px}
 
 /* Steps */
 .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;list-style:none;margin:0;padding:0;counter-reset:s}
@@ -124,6 +135,8 @@ footer .wrap{padding-block:28px 40px;color:var(--muted);font-size:14px}
   .prices{grid-template-columns:1fr}
   .svc{grid-template-columns:1fr;gap:12px}
   .row{font-size:17px;padding:13px 0}
+  .tabs{flex-wrap:nowrap;gap:6px}
+  .tabs button{flex:1 1 0;min-width:0;padding:6px 8px;font-size:14px;line-height:1.15}
   .steps{grid-template-columns:1fr;gap:12px}
   .steps li{display:grid;grid-template-columns:auto 1fr;column-gap:16px;row-gap:2px;padding:16px 18px}
   .steps li::before{grid-row:span 2;font-size:26px}
@@ -188,16 +201,44 @@ footer .wrap{padding-block:28px 40px;color:var(--muted);font-size:14px}
   <section id="prices">
     <div class="wrap">
       <div style="display:flex;flex-direction:column;gap:10px">
-        <div class="eyebrow" style="color:var(--muted)">Starting prices, per visit</div>
-        <h2>Snow removal pricing</h2>
+        <div class="eyebrow" style="color:var(--muted)">Starting prices</div>
+        <h2>Pricing</h2>
       </div>
-      <div class="prices">
-        <div class="row"><span>Single-car driveway<small>1 car wide, up to about 2 cars long</small></span><b>$40</b></div>
-        <div class="row"><span>Two-car driveway<small>2 cars wide, up to about 2 cars long</small></span><b>$55</b></div>
-        <div class="row"><span>Front sidewalk</span><b>+$15</b></div>
-        <div class="row"><span>Salting</span><b>+$20</b></div>
+      <div class="tabs" role="tablist" aria-label="Pricing by service">
+        <button role="tab" id="t-snow" aria-controls="p-snow" aria-selected="true">Snow removal</button>
+        <button role="tab" id="t-win" aria-controls="p-win" aria-selected="false" tabindex="-1">Window cleaning</button>
+        <button role="tab" id="t-car" aria-controls="p-car" aria-selected="false" tabindex="-1">Car detailing</button>
       </div>
-      <p class="note">Longer, wider or sloped driveways and storms over 6": free quote. Text a photo of your driveway and I'll send you a price. No obligation.</p>
+
+      <div class="panel" role="tabpanel" id="p-snow" aria-labelledby="t-snow">
+        <div class="prices">
+          <div class="row"><span>Single-car driveway<small>1 car wide, up to about 2 cars long</small></span><b>$40</b></div>
+          <div class="row"><span>Two-car driveway<small>2 cars wide, up to about 2 cars long</small></span><b>$55</b></div>
+          <div class="row"><span>Front sidewalk</span><b>+$15</b></div>
+          <div class="row"><span>Salting</span><b>+$20</b></div>
+        </div>
+        <p class="note">Per visit. Longer, wider or sloped driveways and storms over 6": free quote. Text a photo of your driveway and I'll send you a price. No obligation.</p>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-win" aria-labelledby="t-win" hidden>
+        <div class="prices">
+          <div class="row"><span>Outside only<small>First-floor windows, per window</small></span><b>$5</b></div>
+          <div class="row"><span>Inside &amp; out<small>First-floor windows, per window</small></span><b>$8</b></div>
+          <div class="row"><span>Small home, outside<small>Up to about 15 windows</small></span><b>$75</b></div>
+          <div class="row"><span>Small home, inside &amp; out<small>Up to about 15 windows</small></span><b>$120</b></div>
+        </div>
+        <p class="note">Screens and tracks wiped at no extra charge. Second-story windows: free quote. Outside windows are booked when it's above freezing; inside windows any time.</p>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-car" aria-labelledby="t-car" hidden>
+        <div class="prices">
+          <div class="row"><span>Interior detail<small>Vacuum, wipe-down, vents, cupholders, inside glass</small></span><b>$60<small>Truck/SUV $80</small></b></div>
+          <div class="row"><span>Exterior wash &amp; wax<small>Hand wash, wheels, tires, spray wax, outside glass</small></span><b>$40<small>Truck/SUV $50</small></b></div>
+          <div class="row"><span>Full detail<small>Interior and exterior together</small></span><b>$90<small>Truck/SUV $120</small></b></div>
+          <div class="row"><span>Add-ons<small>Pet hair removal, heavy salt or mud cleanup</small></span><b>+$20</b></div>
+        </div>
+        <p class="note">I come to you. In winter, exterior washes depend on the weather; interior details are available any time.</p>
+      </div>
     </div>
   </section>
 
@@ -205,7 +246,7 @@ footer .wrap{padding-block:28px 40px;color:var(--muted);font-size:14px}
     <div class="wrap">
       <h2>How it works</h2>
       <ol class="steps">
-        <li><h3>Text me</h3><p>Send your address and a photo of your driveway.</p></li>
+        <li><h3>Text me</h3><p>Send your address, the service you want and a photo if you can.</p></li>
         <li><h3>Get a price</h3><p>I'll reply with a quote before any work is done.</p></li>
         <li><h3>Pay after</h3><p>Cash, PayPal, Venmo or Cash App once the job is finished.</p></li>
       </ol>
@@ -244,6 +285,14 @@ footer .wrap{padding-block:28px 40px;color:var(--muted);font-size:14px}
 <footer><div class="wrap">Hunter's Home Services · Coralville, Iowa</div></footer>
 
 <script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tabs [role=tab]'));
+  function pick(t,focus){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});if(focus)t.focus();}
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){pick(t)});
+    t.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){e.preventDefault();pick(tabs[(i+d+tabs.length)%tabs.length],true);}});
+  });
+})();
 document.getElementById('copy').addEventListener('click', function(){
   var out = document.getElementById('copied');
   var num = '515-326-0652';
