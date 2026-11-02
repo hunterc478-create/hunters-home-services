@@ -21,20 +21,14 @@
   --bg:#FFFFFF;
   --soft:#F1F5FA;
   --line:#DCE4EE;
-  --band:#0B2545;
-  --on-band:#FFFFFF;
-  --on-band-muted:#C9D7E8;
+  --band:#FFFFFF;
+  --on-band:#0B2545;
+  --on-band-muted:#3D5A80;
   --sky:#2E6FA7;
   --sky-bg:#E6F0F9;
   --display:'Archivo Black', Impact, 'Arial Black', sans-serif;
   --body:'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --ink:#EAF0F7;--muted:#A9BBD1;--bg:#0A1628;--soft:#11223A;--line:#1E3352;
-  --band:#06101F;--on-band:#FFFFFF;--on-band-muted:#B5C6DB;--sky:#8EC3EE;--sky-bg:#0E2238;color-scheme:dark}}
-:root[data-theme="dark"]{
-  --ink:#EAF0F7;--muted:#A9BBD1;--bg:#0A1628;--soft:#11223A;--line:#1E3352;
-  --band:#06101F;--on-band:#FFFFFF;--on-band-muted:#B5C6DB;--sky:#8EC3EE;--sky-bg:#0E2238;color-scheme:dark}
 
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
@@ -45,16 +39,16 @@ p{margin:0}
 .eyebrow{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
 
 /* Hero band */
-.band{background:var(--band);color:var(--on-band);position:relative;overflow:hidden}
+.band{background:var(--band);color:var(--on-band);position:relative;overflow:hidden;border-top:8px solid var(--navy)}
 .band .wrap{padding-block:56px 48px;position:relative;display:flex;flex-direction:column;gap:18px}
-.flake{position:absolute;right:-60px;top:-30px;width:360px;height:360px;opacity:.12;pointer-events:none}
+.flake{position:absolute;right:-60px;top:-30px;width:360px;height:360px;opacity:.15;pointer-events:none}
 .band h1{font-size:clamp(52px,12vw,104px);letter-spacing:-.01em}
-.band h1 span{color:var(--gold)}
+.band h1 span{color:var(--sky)}
 .band .lede{font-size:clamp(18px,2.6vw,22px);color:var(--on-band-muted);max-width:34ch}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 22px;border-radius:10px;font:800 17px var(--body);text-decoration:none;border:2px solid transparent;cursor:pointer}
 .btn-gold{background:var(--gold);color:var(--on-gold)}
-.btn-ghost{background:transparent;color:var(--on-band);border-color:rgba(255,255,255,.4)}
+.btn-ghost{background:transparent;color:var(--on-band);border-color:var(--line)}
 .btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .btn svg{width:20px;height:20px}
 
@@ -67,10 +61,10 @@ section .wrap{padding-block:56px;display:flex;flex-direction:column;gap:28px}
 section + section .wrap{border-top:1px solid var(--line)}
 
 /* Services */
-#services{background:var(--sky-bg)}
+#services{background:var(--bg)}
 #services .eyebrow{color:var(--sky)!important}
 .svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;list-style:none;margin:0;padding:0}
-.svc li{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.svc li{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
 .svc .head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
 .svc h3{margin:0;font-size:20px;font-weight:800}
 .svc p{color:var(--muted);font-size:16px}
@@ -90,8 +84,6 @@ section + section .wrap{border-top:1px solid var(--line)}
 .tabs{display:flex;flex-wrap:wrap;gap:8px}
 .tabs button{font:800 16px var(--body);min-height:46px;padding:0 18px;border-radius:999px;border:2px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
 .tabs button[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
-:root[data-theme="dark"] .tabs button[aria-selected="true"]{background:var(--gold);border-color:var(--gold);color:var(--on-gold)}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tabs button[aria-selected="true"]{background:var(--gold);border-color:var(--gold);color:var(--on-gold)}}
 .tabs button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .panel{display:flex;flex-direction:column;gap:20px}
 .panel[hidden]{display:none}
@@ -117,8 +109,6 @@ section + section .wrap{border-top:1px solid var(--line)}
 .area li{border:2px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:700}
 .extra{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;color:var(--muted)}
 .tag{background:var(--navy);color:#fff;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:6px}
-:root[data-theme="dark"] .tag{background:var(--line)}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tag{background:var(--line)}}
 
 footer .wrap{padding-block:28px 40px;color:var(--muted);font-size:14px}
 
@@ -158,7 +148,7 @@ footer .wrap{padding-block:28px 40px;color:var(--muted);font-size:14px}
 
 
 <header class="band">
-  <svg class="flake" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1L19.1 4.9M9 4l3 3 3-3M9 20l3-3 3 3M4 9l3 3-3 3M20 9l-3 3 3 3"/></svg>
+  <svg class="flake" viewBox="0 0 24 24" fill="none" stroke="#2E6FA7" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1L19.1 4.9M9 4l3 3 3-3M9 20l3-3 3 3M4 9l3 3-3 3M20 9l-3 3 3 3"/></svg>
   <div class="wrap">
     <div class="eyebrow">Hunter's Home Services</div>
     <h1>SNOW<br><span>REMOVAL</span></h1>
