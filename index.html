@@ -93,6 +93,9 @@ section + section .wrap{border-top:1px solid var(--line)}
 .panel[hidden]{display:none}
 .row b{text-align:right;white-space:nowrap}
 .row b small{display:block;font-size:13px;font-weight:700;color:var(--muted);margin-top:2px}
+.row b s{color:var(--muted);font-weight:700;margin-right:4px}
+.winter{display:flex;flex-direction:column;gap:4px;background:var(--sky-bg);border-left:4px solid var(--sky);border-radius:10px;padding:12px 16px;font-size:15px}
+.winter strong{font-weight:800;color:var(--sky);text-transform:uppercase;letter-spacing:.06em;font-size:13px}
 
 /* Steps */
 .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;list-style:none;margin:0;padding:0;counter-reset:s}
@@ -229,7 +232,8 @@ footer .wrap{padding-block:28px 40px;color:var(--muted);font-size:14px}
       <div class="panel" role="tabpanel" id="p-car" aria-labelledby="t-car" hidden>
         <div class="prices">
           <div class="row"><span>Interior detail<small>Vacuum, wipe-down, vents, cupholders, inside glass</small></span><b>$120<small>Truck/SUV $150</small></b></div>
-          <div class="row"><span>Exterior wash &amp; wax<small>Hand wash, wheels, tires, spray wax, outside glass</small></span><b>$70<small>Truck/SUV $90</small></b></div>
+          <div class="winter"><strong>❄ Winter deal</strong><span>Exterior wash &amp; wax for <b>$50</b> (Truck/SUV <b>$70</b>) through Feb 28. Booked on days above freezing.</span></div>
+          <div class="row"><span>Exterior wash &amp; wax<small>Hand wash, wheels, tires, spray wax, outside glass</small></span><b><s>$70</s> $50<small><s>Truck/SUV $90</s> $70</small></b></div>
           <div class="row"><span>Full detail<small>Interior and exterior together</small></span><b>$180<small>Truck/SUV $220</small></b></div>
           <div class="row"><span>Monthly plan<small>I come once a month to keep it clean: hand wash, vacuum, wipe-down, glass, tire shine. Starts after a full detail. No contract.</small></span><b>$80<small>Truck/SUV $100</small></b></div>
           <div class="row"><span>Add-ons<small>Pet hair removal, heavy salt or mud cleanup</small></span><b>+$30</b></div>
